@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99074f5d-3188-4f97-a59d-538dafa823f3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PixelPuzzle/extensions.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PixelPuzzle.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/PixelPuzzle.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PixelPuzzle/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PixelPuzzle/ViewController.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewController.swift" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ViewController.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PixelPuzzle/ViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="165" column="5" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
+            <state relative-caret-position="1215">
+              <caret line="81" column="87" lean-forward="true" selection-start-line="81" selection-start-column="87" selection-end-line="81" selection-end-column="87" />
               <folding>
                 <element signature="e#132#144#0" expanded="true" />
               </folding>
@@ -44,20 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PixelPuzzle/AppDelegate.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="480">
+              <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -65,10 +59,22 @@
       <file leaf-file-name="PixelHelper.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PixelPuzzle/PixelHelper.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            <state relative-caret-position="-94">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="26" />
               <folding>
                 <element signature="e#128#140#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="extensions.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PixelPuzzle/extensions.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+              <folding>
+                <element signature="e#101#113#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,7 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addsubview</find>
       <find>Map&lt;</find>
       <find>Hashmap</find>
       <find>PixelState</find>
@@ -108,6 +113,7 @@
       <find>setupav</find>
       <find>orienta</find>
       <find>preview</find>
+      <find>extension</find>
     </findStrings>
     <replaceStrings>
       <replace>handlePinch</replace>
@@ -122,8 +128,9 @@
         <option value="$PROJECT_DIR$/PixelPuzzle/CanvasViewModel.swift" />
         <option value="$PROJECT_DIR$/PixelPuzzle/Canvas.swift" />
         <option value="$PROJECT_DIR$/PixelPuzzle/PixelHelper.swift" />
-        <option value="$PROJECT_DIR$/PixelPuzzle/ViewController.swift" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/PixelPuzzle/extensions.swift" />
+        <option value="$PROJECT_DIR$/PixelPuzzle/ViewController.swift" />
       </list>
     </option>
   </component>
@@ -140,10 +147,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1680" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -176,16 +182,31 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="local">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="PixelPuzzle" type="cbb8eebc:String" user="PixelPuzzle" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="PixelPuzzle" type="cbb8eebc:String" user="PixelPuzzle" />
+              <item name="PixelPuzzle" type="cbb8eebc:String" user="PixelPuzzle" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="PixelPuzzle" />
-    <property name="SearchEverywhereHistoryKey" value="viewcontro&#9;null&#9;null&#10;viewdid&#9;null&#9;null&#10;scanimage&#9;null&#9;null&#10;endDrawing&#9;null&#9;null&#10;initial&#9;null&#9;null&#10;initiali&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="analyse&#9;null&#9;null&#10;viewcon&#9;FILE&#9;file:///Users/zheng/Documents/Mobile/Swift/PixelPuzzle/PixelPuzzle/ViewController.swift&#10;viewcontro&#9;null&#9;null&#10;viewdid&#9;null&#9;null&#10;scanimage&#9;null&#9;null&#10;endDrawing&#9;null&#9;null&#10;initial&#9;null&#9;null&#10;initiali&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -217,24 +238,23 @@
       <option name="presentableId" value="Default" />
       <updated>1533231009906</updated>
       <workItem from="1533231011858" duration="372000" />
-      <workItem from="1533248626987" duration="12084000" />
+      <workItem from="1533248626987" duration="13000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12456000" />
+    <option name="totallyTimeSpent" value="13372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" weight="0.32960325" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29196337" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32960325" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29196337" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32960325" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229167" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -288,13 +308,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PixelPuzzle/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PixelPuzzle/Canvas.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -302,30 +315,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PixelPuzzle/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PixelPuzzle/PixelHelper.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="-94">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="26" />
           <folding>
             <element signature="e#128#140#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PixelPuzzle/ViewController.swift">
+    <entry file="file://$PROJECT_DIR$/PixelPuzzle/extensions.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="165" column="5" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
+        <state relative-caret-position="304">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
           <folding>
-            <element signature="e#132#144#0" expanded="true" />
+            <element signature="e#101#113#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/PixelPuzzle/ViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        <state relative-caret-position="1215">
+          <caret line="81" column="87" lean-forward="true" selection-start-line="81" selection-start-column="87" selection-end-line="81" selection-end-column="87" />
+          <folding>
+            <element signature="e#132#144#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
