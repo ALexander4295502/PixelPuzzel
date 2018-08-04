@@ -39,10 +39,11 @@ class ColorMapView: UIView {
         stackViewContainer.spacing = 1
 
         var _stackView = generateStackView()
+        let sortedKeys = self.colorMap.keys.sorted(by: { self.colorMap[$0]! < self.colorMap[$1]! })
 
-        for (color, index) in self.colorMap {
+        for key in sortedKeys {
             let itemView = UIView()
-            itemView.backgroundColor = color
+            itemView.backgroundColor = key
             itemView.layer.borderWidth = 1
             itemView.layer.borderColor = self.defaultBorderColor.cgColor
             _stackView.addArrangedSubview(itemView)
@@ -51,12 +52,15 @@ class ColorMapView: UIView {
                 _stackView = generateStackView()
             }
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-            label.text = String(index)
+            label.text = String(self.colorMap[key]!)
             label.textAlignment = .center
             itemView.addSubview(label)
             fullfillView(initView: label,
                          parentView: itemView,
                          margin: 0)
+        }
+        if _stackView.subviews.count > 0 {
+            stackViewContainer.addArrangedSubview(_stackView)
         }
         self.addSubview(stackViewContainer)
         stackViewContainer.frame = CGRect(x: 5,
