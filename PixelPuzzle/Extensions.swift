@@ -145,6 +145,20 @@ extension UIView {
                        animations: { self.alpha = 1.0 },
                        completion: nil)
     }
+
+    func emphasize(start: Bool, backColor: UIColor?) {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.curveLinear], animations: {
+            self.backgroundColor = start ? UIColor.red : backColor
+        }, completion: nil)
+    }
+
+    func fadeOut(start: Bool) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options: [.curveLinear],
+                       animations: { self.alpha = start ? 0.5 : 1 },
+                       completion: nil)
+    }
 }
 
 extension UIColor {
@@ -157,6 +171,10 @@ extension UIColor {
         let blue = Float(coreImageColor.blue * 255 + 0.5)
         return [red, green, blue]
     }
+
+    var greyScale: Float {
+        return (0.3 * self.rgb[0] + 0.59 * self.rgb[1] + 0.11 * self.rgb[2])
+    }
 }
 
 extension Canvas: CanvasDelegate {
@@ -167,7 +185,9 @@ extension Canvas: CanvasDelegate {
     func clearCanvas() {
         for row in pixels {
             for pixel in row {
-                pixel.backgroundColor = canvasDefaultColor
+                if (pixel.color != nil) {
+                    pixel.reset()
+                }
             }
         }
     }
@@ -179,7 +199,7 @@ extension Canvas: CanvasDelegate {
             return
         }
         parentPixel.updateColorIndex(color: pixelState.color, index: self.colorMap[pixelState.color]!)
-        parentPixel.backgroundColor = canvasDefaultColor
+        parentPixel.reset()
         let lb = UILabel(frame: CGRect(x: 0, y: 0, width: pixelSize, height: pixelSize))
         lb.text = String(self.colorMap[pixelState.color]!)
         lb.textAlignment = .center
@@ -196,7 +216,10 @@ extension Canvas: CanvasDelegate {
             let convertedTouchPoint = getRaletivePointOnImage(point: originalTouchPoint!)
             if convertedTouchPoint != nil {
                 let imageColorAtPoint = self.capturedImage.getPixelColor(atLocation: convertedTouchPoint!, withFrameSize: self.capturedImage.size)
-                let _ = pixel.checkColor(color: imageColorAtPoint, threshold: self.colorCompareThreshold)
+                let score = pixel.checkColor(color: imageColorAtPoint, threshold: self.colorCompareThreshold)
+                if (score > 0) {
+                    viewControllerDelegate?.updateStatusBoard(score: score)
+                }
                 viewControllerDelegate?.compareColorUpdate(topColor: pixel.color!, bottomColor: imageColorAtPoint)
             }
         }
@@ -208,8 +231,32 @@ extension ViewController: ViewControllerDelegate {
     func compareColorUpdate(topColor: UIColor, bottomColor: UIColor) {
         self.compareTopView.backgroundColor = topColor
         self.compareBottomView.backgroundColor = bottomColor
-        self.compareColorLabel.text = String(Double(compareColorDifferenceByRGB(colorA: topColor, colorB: bottomColor)).roundToDecimal(2))
+        self.compareColorLabel.text = String(Double(compareColorDifferenceByGreyScale(colorA: topColor, colorB: bottomColor)).roundToDecimal(2))
     }
+
+    func updateStatusBoard(score: Int) {
+        self.statusView.updateStatus(score: score)
+    }
+
+    func showUnfinishedPixelsHint() {
+        self.canvas.showUnfinishedPixelsHint()
+    }
+
+    func hideUnfinishedPixelsHint() {
+        self.canvas.hideUnfinishedPixelsHint()
+    }
+
+    func showAlert(alert: UIAlertController) {
+        self.present(alert, animated: true)
+    }
+}
+
+protocol ViewControllerDelegate: class {
+    func compareColorUpdate(topColor: UIColor, bottomColor: UIColor)
+    func updateStatusBoard(score: Int)
+    func showUnfinishedPixelsHint()
+    func hideUnfinishedPixelsHint()
+    func showAlert(alert: UIAlertController)
 }
 
 extension Canvas: UIGestureRecognizerDelegate {

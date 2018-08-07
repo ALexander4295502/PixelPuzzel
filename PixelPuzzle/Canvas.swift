@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol ViewControllerDelegate: class {
-    func compareColorUpdate(topColor: UIColor, bottomColor: UIColor)
-}
-
 public class Canvas: UIView {
     var pixels: Array<Array<Pixel>>!
     let width: Int
@@ -184,6 +180,42 @@ public class Canvas: UIView {
         for row in pixels {
             for pixel in row {
                 pixel.reset()
+            }
+        }
+    }
+
+    public func getTotalColoredPixels() -> Int {
+        var count = 0
+        for row in pixels {
+            for pixel in row {
+                if pixel.color != nil {
+                    count += 1
+                }
+            }
+        }
+        return count
+    }
+
+    public func showUnfinishedPixelsHint() -> Void {
+        for row in pixels {
+            for pixel in row {
+                if !pixel.hasAppliedColor() {
+                    pixel.emphasize(start: true, backColor: nil)
+                } else {
+                    pixel.fadeOut(start: true)
+                }
+            }
+        }
+    }
+
+    public func hideUnfinishedPixelsHint() -> Void {
+        for row in pixels {
+            for pixel in row {
+                if !pixel.hasAppliedColor() {
+                    pixel.emphasize(start: false, backColor: pixel.color!.withAlphaComponent(0.6))
+                } else {
+                    pixel.fadeOut(start: false)
+                }
             }
         }
     }

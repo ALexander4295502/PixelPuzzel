@@ -12,6 +12,7 @@
 		0FAC8D322113B500003A8197 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC8D312113B500003A8197 /* CanvasViewModel.swift */; };
 		6E80201636FAE36B367B4337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E802AF11CC313C054A78ECE /* Main.storyboard */; };
 		6E80201E3C7D8FC74C5B52DA /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E802041AA67BC612AB4D9C7 /* Metrics.swift */; };
+		6E80203C631186EBF6F93BDA /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E802F85055A5A3F5ADF8D14 /* StatusView.swift */; };
 		6E80215A6800E2B597289F70 /* ColorMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E802FD0C14A0BA5AC524B6E /* ColorMapView.swift */; };
 		6E8024631F768A2345A41F9F /* Ruby.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E802E438E4727FE438C1F57 /* Ruby.png */; };
 		6E8025536F85147CEA94595C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8028B161F0663C850CB0E9 /* Extensions.swift */; };
@@ -36,6 +37,7 @@
 		6E802C988BDF0CC53D67838B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E802CE5732CE8E3A3AECC4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		6E802E438E4727FE438C1F57 /* Ruby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ruby.png; sourceTree = "<group>"; };
+		6E802F85055A5A3F5ADF8D14 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		6E802FD0C14A0BA5AC524B6E /* ColorMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 				6E802FD0C14A0BA5AC524B6E /* ColorMapView.swift */,
 				6E802041AA67BC612AB4D9C7 /* Metrics.swift */,
 				6E802035BE85FA86D80CD11A /* Pixel.swift */,
+				6E802F85055A5A3F5ADF8D14 /* StatusView.swift */,
 			);
 			path = PixelPuzzle;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				6E80215A6800E2B597289F70 /* ColorMapView.swift in Sources */,
 				6E80201E3C7D8FC74C5B52DA /* Metrics.swift in Sources */,
 				6E802A0DA8AD3C614F514AA7 /* Pixel.swift in Sources */,
+				6E80203C631186EBF6F93BDA /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

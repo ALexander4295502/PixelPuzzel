@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     var compareBottomView: UIView!
     var compareColorLabel: UILabel!
 
+    var statusView: StatusView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeCameraView()
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
 
     func setupCompareColorView() {
         self.canvas.viewControllerDelegate = self
+        self.statusView.viewControllerDelegate = self
         self.compareColorView = UIView(frame: CGRect(x: 90, y: 50, width: 50, height: 80))
         self.compareColorLabel = UILabel(frame: CGRect(x: 90, y: 130, width: 50, height: 30))
         self.compareColorLabel.text = "0.00"
@@ -104,7 +107,8 @@ class ViewController: UIViewController {
         }
 
         addCanvas()
-        addColorMap()
+//        addColorMap()
+        addStatusView()
         addSlider()
         addButton()
     }
@@ -131,6 +135,15 @@ class ViewController: UIViewController {
                                                                 self.view.bounds.height - colorMapView.bounds.height) / 2 - 34),
                                                 from: self.view.superview)
         self.view.addSubview(colorMapView)
+    }
+
+    func addStatusView() -> Void {
+        statusView = StatusView(totalPixels: self.canvas.getTotalColoredPixels())
+        statusView.center = self.view.convert(CGPoint(x: self.view.center.x,
+                                                        y: self.view.center.y + (
+                                                                self.view.bounds.height - statusView.bounds.height) / 2 - 34),
+                                                from: self.view.superview)
+        self.view.addSubview(statusView)
     }
 
     func setupAnalyseCapturedImageTime() -> Void {
@@ -185,12 +198,13 @@ class ViewController: UIViewController {
         resetButton.layer.borderColor = UIColor.blue.cgColor
         resetButton.layer.borderWidth = 1
         resetButton.layer.cornerRadius = 5
-        resetButton.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(resetButtonAction(sender:)), for: .touchUpInside)
         self.view.addSubview(resetButton)
     }
 
-    @objc func buttonAction(sender: UIButton!) {
+    @objc func resetButtonAction(sender: UIButton!) {
         self.canvas.reset()
+        self.statusView.resetStatus()
     }
 
     @objc func sliderDidChange(sender: UISlider!) {

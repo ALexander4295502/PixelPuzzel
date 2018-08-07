@@ -9,6 +9,7 @@ import Foundation
 class Pixel: UIView {
     var color: UIColor?
     var colorIndex: Int?
+    var isApplyiedColor: Bool?
 
     public init(x: CGFloat, y: CGFloat, pixelSize: CGFloat) {
         super.init(frame: CGRect(x: x, y: y, width: pixelSize, height: pixelSize))
@@ -35,31 +36,33 @@ class Pixel: UIView {
         return self.colorIndex
     }
 
-    public func checkColor(color: UIColor, threshold: Float) -> Bool {
+    public func checkColor(color: UIColor, threshold: Float) -> Int {
         if self.hasColorIndex() {
-            let diff = compareColorDifferenceByRGB(colorA: self.color!, colorB: color)
+            let diff = compareColorDifferenceByGreyScale(colorA: self.color!, colorB: color)
             if (diff < threshold) {
-                applySelfColor()
-                return true
+                applySelfColor(color: color)
+                return Int(1/(diff + 0.01))
             } else {
-                return false
+                return 0
             }
         } else {
-            return false
+            return 0
         }
     }
 
     public func hasAppliedColor() -> Bool {
-        return self.color == nil || self.backgroundColor == self.color
+        return self.color == nil || self.isApplyiedColor == true
     }
 
-    private func applySelfColor() {
-        self.backgroundColor = self.color
+    private func applySelfColor(color: UIColor) {
+        self.backgroundColor = color
+        self.isApplyiedColor = true
     }
 
     public func reset() {
-        if self.backgroundColor != nil {
-            self.backgroundColor = nil
+        if self.color != nil {
+            self.backgroundColor = self.color!.withAlphaComponent(0.6)
+            self.isApplyiedColor = false
         }
     }
 }
